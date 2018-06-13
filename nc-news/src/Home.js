@@ -21,7 +21,7 @@ class Home extends Component {
       <div className="App">
         <h1>NORTHCODERS NEWS</h1>
         <Articles articles={this.state.articles} topic={this.props.location} />
-        <Topics chosenTopic={this.state.chosenTopic} />
+        <Topics />
       </div>
 
     );
