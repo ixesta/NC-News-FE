@@ -19,6 +19,14 @@ class Topics extends React.Component {
     const { articles } = await this.fetchData()
     this.setState({ articles })
   }
+
+  componentDidUpdate = async (prevProps) => {
+    if (prevProps !== this.props) {
+      const { articles } = await this.fetchData()
+      this.setState({ articles })
+    }
+  }
+
   fetchData = async query => {
     const { data } = this.props.match ? await axios.get(`https://ro-nc-news.herokuapp.com/api/topics/${this.props.match.params.topic}/articles/`) : await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/`)
     return data;
