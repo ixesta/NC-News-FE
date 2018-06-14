@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import Votes from '../Votes/Votes'
 
 class Comments extends React.Component {
   state = {
@@ -12,6 +13,7 @@ class Comments extends React.Component {
           return <div>
             <p>Comment: {comment.body}</p>
             <p>Created by: {comment.created_by}</p>
+            <Votes />
           </div>
 
         })}
@@ -33,7 +35,6 @@ class Comments extends React.Component {
 
   fetchData = async () => {
     const { data } = await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`)
-    console.log(data, 'maaaaaaatch')
     return data;
   }
 }
