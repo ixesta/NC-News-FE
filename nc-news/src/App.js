@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home'
 import Article from './Article/Article';
-import Topics from './Topics/Topics'
+
 
 class App extends Component {
   render() {
@@ -28,8 +28,8 @@ class App extends Component {
           </Link>
 
           <Route exact path="/" component={Home} />
-          {/* <Route path="/topics/:topic/" component={Topics} /> */}
           <Route path="/article/:article_id" component={Article} />
+          {/* <Route path="/comments" component={Comments} /> */}
 
         </div>
       </Router>
