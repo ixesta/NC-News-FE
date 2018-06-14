@@ -4,7 +4,7 @@ import Votes from '../Votes/Votes'
 
 class Comments extends React.Component {
   state = {
-    comments: []
+    comments: [{ votes: 0 }]
   }
   render() {
     return (
@@ -12,8 +12,8 @@ class Comments extends React.Component {
         {this.state.comments.map(comment => {
           return <div>
             <p>Comment: {comment.body}</p>
-            <p>Created by: {comment.created_by}</p>
-            <Votes />
+            <p>Votes: {comment.votes}</p>
+            <Votes comment_id={comment._id} updateVote={this.updateVote} />
           </div>
 
         })}
@@ -36,6 +36,17 @@ class Comments extends React.Component {
   fetchData = async () => {
     const { data } = await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`)
     return data;
+  }
+
+  updateVote = (direction, id) => {
+    console.log(this.state, 'heeeeell')
+    const { comments } = this.state;
+    const commentsCopy = [...comments];
+    const index = commentsCopy.findIndex(({ _id }) => _id === id);
+    commentsCopy[index].votes += direction;
+
+
+    this.setState({ comments: commentsCopy })
   }
 }
 

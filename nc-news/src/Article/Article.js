@@ -14,8 +14,8 @@ class Article extends React.Component {
       <section>
         <h1>{this.state.article.title}</h1>
         <h4>{this.state.article.body}</h4>
-        <p>{this.state.article.votes}</p>
-        <Votes article_id={this.state.article._id} updateVote={this.updateVote} />
+        <p>Votes: {this.state.article.votes}</p>
+        <Votes article_id={this.state.article._id} updateVote={this.updateVote} handleVoteClick={this.handleVoteClick} />
         <p><h3>Comments: </h3></p>
         <Comments article_id={this.state.article._id} />
       </section>

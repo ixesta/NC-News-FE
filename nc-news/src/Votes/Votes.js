@@ -16,9 +16,15 @@ class Votes extends React.Component {
   }
 
   handleVoteClick = async (event) => {
-    const vote = event.target.value
-    const { data } = await axios.put(`https://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}?vote=${vote}`)
-    this.props.updateVote(vote === 'up' ? 1 : vote === 'down' ? -1 : 0)
+    let path = 'https://ro-nc-news.herokuapp.com/api/';
+    const vote = event.target.value;
+    const collection = this.props.article_id ? 'articles' : 'comments';
+    const id = this.props.article_id ? this.props.article_id : this.props.comment_id;
+
+    path += `${collection}/${id}?vote=${vote}`;
+    console.log(path)
+    const { data } = await axios.put(path);
+    this.props.updateVote(vote === 'up' ? 1 : vote === 'down' ? -1 : 0, id)
     return data;
   }
 }
