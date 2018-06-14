@@ -4,7 +4,8 @@ import Votes from '../Votes/Votes'
 
 class Comments extends React.Component {
   state = {
-    comments: [{ votes: 0 }]
+    comments: [{ votes: 0 }],
+    input: ''
   }
   render() {
     return (
@@ -15,8 +16,13 @@ class Comments extends React.Component {
             <p>Votes: {comment.votes}</p>
             <Votes comment_id={comment._id} updateVote={this.updateVote} />
           </div>
-
         })}
+        <div>
+          <form>
+            <input onChange={this.handleInput} value={this.state.input} />
+            <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
+          </form>
+        </div>
       </section>
     )
   }
@@ -39,14 +45,29 @@ class Comments extends React.Component {
   }
 
   updateVote = (direction, id) => {
-    console.log(this.state, 'heeeeell')
     const { comments } = this.state;
     const commentsCopy = [...comments];
     const index = commentsCopy.findIndex(({ _id }) => _id === id);
     commentsCopy[index].votes += direction;
-
-
     this.setState({ comments: commentsCopy })
+  }
+
+  postComment = (event) => {
+    const { comments } = this.state;
+    const commentsCopy = [...comments];
+    event.preventDefault();
+    axios
+      .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
+      .then((res) => {
+        this.setState({ comments: [...comments, res.data] })
+      })
+  }
+
+
+  handleInput = (event) => {
+    event.preventDefault();
+    const input = event.target.value;
+    this.setState({ input })
   }
 }
 
