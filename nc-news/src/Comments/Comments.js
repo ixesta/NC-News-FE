@@ -15,6 +15,7 @@ class Comments extends React.Component {
             <p>Comment: {comment.body}</p>
             <p>Votes: {comment.votes}</p>
             <Votes comment_id={comment._id} updateVote={this.updateVote} />
+            <button onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>
           </div>
         })}
         <div>
@@ -63,11 +64,21 @@ class Comments extends React.Component {
       })
   }
 
-
   handleInput = (event) => {
     event.preventDefault();
     const input = event.target.value;
     this.setState({ input })
+  }
+
+  handleDeleteClick = async (comment_id) => {
+    const { data } = await axios
+      .delete(`http://ro-nc-news.herokuapp.com/api/comments/${comment_id}`)
+    // find comment and then delete it
+    const newComments = this.state.comments.filter(comment => comment._id !== comment_id)
+
+
+    this.setState({ comments: newComments })
+
   }
 }
 
