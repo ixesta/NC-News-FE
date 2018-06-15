@@ -26,8 +26,13 @@ class Article extends React.Component {
   }
 
   componentDidMount = async () => {
-    const { article } = await this.fetchData()
-    this.setState({ article })
+    try {
+      const { article } = await this.fetchData()
+      this.setState({ article })
+    } catch (err) {
+      if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
+      this.props.history.push('/404');
+    }
   }
 
   componentDidUpdate = async (prevProps) => {

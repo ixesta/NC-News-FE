@@ -9,12 +9,11 @@ class Comments extends React.Component {
     input: ''
   }
   render() {
-    console.log(this.state.comments)
     return (
       <section>
         <div>
           <form>
-            <input onChange={this.handleInput} value={this.state.input} />
+            <input onChange={this.handleInput} value={this.state.input} required />
             <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
           </form>
         </div>
@@ -25,7 +24,6 @@ class Comments extends React.Component {
             <p>Created by: {comment.created_by.username}</p>
             <p>Votes: {comment.votes}</p>
             <Votes comment_id={comment._id} updateVote={this.updateVote} />
-
             {comment.created_by.username === 'tickle122' && <button onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
           </div>
         })}
@@ -37,6 +35,7 @@ class Comments extends React.Component {
   componentDidMount = async () => {
     await this.fetchData()
   }
+
 
   componentDidUpdate = async (prevProps) => {
     if (prevProps.article_id !== this.props.article_id) {

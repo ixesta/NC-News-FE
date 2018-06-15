@@ -17,9 +17,21 @@ class Topics extends React.Component {
       </div>
     )
   }
+  // componentDidMount = async () => {
+  //   const { articles } = await this.fetchData()
+  //   this.setState({ articles })
+  // }
+
   componentDidMount = async () => {
-    const { articles } = await this.fetchData()
-    this.setState({ articles })
+    try {
+      const { articles } = await this.fetchData()
+      console.log(articles)
+      this.setState({ articles })
+    } catch (err) {
+      console.log(err)
+      if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
+      this.props.history.push('/404');
+    }
   }
 
   componentDidUpdate = async (prevProps) => {
