@@ -15,7 +15,6 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        <h1>NORTHCODERS NEWS</h1>
         <Articles articles={this.state.articles} />
       </div>
 

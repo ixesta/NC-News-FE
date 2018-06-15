@@ -5,7 +5,7 @@ import Votes from '../Votes/Votes'
 
 class Comments extends React.Component {
   state = {
-    comments: [{ votes: 0 }],
+    comments: [],
     input: ''
   }
   render() {
@@ -22,9 +22,11 @@ class Comments extends React.Component {
         {this.state.comments.map(comment => {
           return <div>
             <p>Comment: {comment.body}</p>
+            <p>Created by: {comment.created_by.username}</p>
             <p>Votes: {comment.votes}</p>
             <Votes comment_id={comment._id} updateVote={this.updateVote} />
-            <button onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>
+
+            {comment.created_by.username === 'tickle122' && <button onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
           </div>
         })}
 

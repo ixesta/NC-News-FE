@@ -17,7 +17,7 @@ class Article extends React.Component {
         <h4>{this.state.article.body}</h4>
         <p>Votes: {this.state.article.votes}</p>
         <Votes article_id={this.state.article._id} updateVote={this.updateVote} handleVoteClick={this.handleVoteClick} />
-        <p><h3>Comments: </h3></p>
+        <h3>Comments: </h3>
         <Comments article_id={this.state.article._id} />
       </section>
 
@@ -40,6 +40,8 @@ class Article extends React.Component {
   fetchData = async query => {
     const { data } = this.props.match ? await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/${this.props.match.params.article_id}/`) : await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/`)
     return data;
+    // .catch(this.props.history.push('400'))
+    //if(err.response.status === 400){this.props.history.push('400)}
   }
 
   updateVote = (direction) => {
