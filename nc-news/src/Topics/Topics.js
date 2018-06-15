@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 class Topics extends React.Component {
   state = {
@@ -11,7 +12,8 @@ class Topics extends React.Component {
     return (
 
       <div>
-        {this.state.articles.map(article => <p>{article.title}</p>)}
+        {/* {this.state.articles.map(article => <p>{article.title}</p>)} */}
+        {this.state.articles.map(article => <Link to={`/article/${article._id}`}><p>{article.title}</p></Link>)}
       </div>
     )
   }

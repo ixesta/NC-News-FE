@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Votes from '../Votes/Votes'
 
+
 class Comments extends React.Component {
   state = {
     comments: [{ votes: 0 }],
@@ -73,10 +74,7 @@ class Comments extends React.Component {
   handleDeleteClick = async (comment_id) => {
     const { data } = await axios
       .delete(`http://ro-nc-news.herokuapp.com/api/comments/${comment_id}`)
-    // find comment and then delete it
     const newComments = this.state.comments.filter(comment => comment._id !== comment_id)
-
-
     this.setState({ comments: newComments })
 
   }
