@@ -30,8 +30,7 @@ class Comments extends React.Component {
   }
 
   componentDidMount = async () => {
-    const data = await this.fetchData()
-    // this.setState({ comments })
+    await this.fetchData()
   }
 
   componentDidUpdate = async (prevProps) => {
@@ -56,7 +55,6 @@ class Comments extends React.Component {
 
   postComment = (event) => {
     const { comments } = this.state;
-    const commentsCopy = [...comments];
     event.preventDefault();
     axios
       .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
@@ -72,7 +70,7 @@ class Comments extends React.Component {
   }
 
   handleDeleteClick = async (comment_id) => {
-    const { data } = await axios
+    await axios
       .delete(`http://ro-nc-news.herokuapp.com/api/comments/${comment_id}`)
     const newComments = this.state.comments.filter(comment => comment._id !== comment_id)
     this.setState({ comments: newComments })

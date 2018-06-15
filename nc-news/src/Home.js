@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Articles from './Articles/Articles'
 
-
-
-
 class Home extends Component {
   state = {
     articles: []
