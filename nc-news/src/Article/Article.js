@@ -9,6 +9,7 @@ class Article extends React.Component {
     }
   }
   render() {
+
     return (
 
       <section>
@@ -21,6 +22,7 @@ class Article extends React.Component {
       </section>
 
     )
+
   }
 
   componentDidMount = async () => {

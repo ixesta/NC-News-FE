@@ -9,8 +9,16 @@ class Comments extends React.Component {
     input: ''
   }
   render() {
+    console.log(this.state.comments)
     return (
       <section>
+        <div>
+          <form>
+            <input onChange={this.handleInput} value={this.state.input} />
+            <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
+          </form>
+        </div>
+
         {this.state.comments.map(comment => {
           return <div>
             <p>Comment: {comment.body}</p>
@@ -19,12 +27,7 @@ class Comments extends React.Component {
             <button onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>
           </div>
         })}
-        <div>
-          <form>
-            <input onChange={this.handleInput} value={this.state.input} />
-            <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
-          </form>
-        </div>
+
       </section>
     )
   }
