@@ -91,7 +91,7 @@ a {
 
 
 
-.articles, .article-page {
+.articles {
   position: absolute;
   margin-top: 11em;
   font-family: sans-serif;
@@ -101,10 +101,6 @@ a {
   background-color: black;
   background-size: cover;
   width: 100%;
-  
-}
-
-.articles {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -166,23 +162,40 @@ margin-left: 1em;
   width: 20em;
   background-color: rgb(192, 167, 136);
   font-size: 1em;
-  text-align: left;
 
 }
-
+.article-page {
+  position: absolute;
+  margin-top: 11em;
+  font-family: sans-serif;
+  justify-content: center;
+  color: bisque;
+  font-size: 1.5em;
+}
 .comments {
-  display: flex;
-  flex-direction: column;
-  
+  display: column;
+  width: auto;
+  height: auto;
+  color: bisque;
 }
 .comment {
   border: .2em solid rgb(187, 116, 30);
-  width: 12em;
+  width: 90%;
   background-color:black;
-  height: 9em;
+  height: auto;
   margin-top: 1em;
   margin-left: 3em;
   padding: 1em;
   border-radius: 1em;
+  text-align: justify;
+  font-size: 0.8em;
   
+}
+.comment-author {
+  margin-bottom: 1em;
+}
+
+.comment-votes {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }

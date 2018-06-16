@@ -20,9 +20,9 @@ class Comments extends React.Component {
         <div className='comments'>
           {this.state.comments.sort((a, b) => { a.created_at < b.created_at }).map(comment => {
             return <div className='comment'>
-              <p>Comment: {comment.body}</p>
-              <p>Created by: {comment.created_by.username}</p>
-              <p>Votes: {comment.votes}</p>
+              <p className='comment-author'>Created by: {comment.created_by.username}</p>
+              <p>{comment.body}</p>
+              <p className='comment-votes'>Votes: {comment.votes}</p>
               <Votes comment_id={comment._id} updateVote={this.updateVote} />
               {comment.created_by.username === 'tickle122' && <button className='button' onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
             </div>

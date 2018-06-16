@@ -13,7 +13,7 @@ class Topics extends React.Component {
 
       <div className='articles'>
         {/* {this.state.articles.map(article => <p>{article.title}</p>)} */}
-        {this.state.articles.map(article => <Link to={`/article/${article._id}`}><p>{article.title}</p></Link>)}
+        {this.state.articles.map((article, i) => <Link key={i} to={`/article/${article._id}`}><div className='article-list'><p className='article-title'>{article.title}</p> <p className='article-by'>by {article.created_by.username}</p></div></Link>)}
       </div>
     )
   }
