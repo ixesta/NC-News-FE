@@ -14,7 +14,7 @@ class Comments extends React.Component {
         <div>
           <form>
             <p><textarea className='input' onChange={this.handleInput} value={this.state.input} required /></p>
-            <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
+            <button className='button' id='submit-button' type='Submit' onClick={this.postComment}>Submit your comment</button>
           </form>
         </div>
         <div className='comments'>
@@ -24,7 +24,7 @@ class Comments extends React.Component {
               <p>{comment.body}</p>
               <p className='comment-votes'>Votes: {comment.votes}</p>
               <Votes comment_id={comment._id} updateVote={this.updateVote} />
-              {comment.created_by.username === 'tickle122' && <button className='button' onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
+              {comment.created_by.username === 'tickle122' && <button className='button' id='delete-button' onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
             </div>
           })}
         </div>
