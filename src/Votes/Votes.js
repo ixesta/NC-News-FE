@@ -8,8 +8,8 @@ class Votes extends React.Component {
     return (
       <div>
         <p>
-          <button value={'up'} onClick={(e) => this.handleVoteClick(e)}>Vote Up</button>
-          <button value={'down'} onClick={(e) => this.handleVoteClick(e)}>Vote Down</button>
+          <button className='button' value={'up'} onClick={(e) => this.handleVoteClick(e)}>Vote Up</button>
+          <button className='button' value={'down'} onClick={(e) => this.handleVoteClick(e)}>Vote Down</button>
         </p>
       </div>
     )

@@ -32,6 +32,7 @@ class App extends Component {
 
           <h1>NORTHCODERS NEWS</h1>
 
+
           <Route exact path="/" component={Home} />
           <Route path="/article/:article_id" component={Article} />
           {/* <Route path="/comments" component={Comments} /> */}

@@ -13,21 +13,21 @@ class Comments extends React.Component {
       <section>
         <div>
           <form>
-            <input onChange={this.handleInput} value={this.state.input} required />
+            <p><input className='input' onChange={this.handleInput} value={this.state.input} required /></p>
             <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
           </form>
         </div>
-
-        {this.state.comments.map(comment => {
-          return <div>
-            <p>Comment: {comment.body}</p>
-            <p>Created by: {comment.created_by.username}</p>
-            <p>Votes: {comment.votes}</p>
-            <Votes comment_id={comment._id} updateVote={this.updateVote} />
-            {comment.created_by.username === 'tickle122' && <button onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
-          </div>
-        })}
-
+        <div>
+          {this.state.comments.sort((a, b) => { a.created_at < b.created_at }).map(comment => {
+            return <div>
+              <p>Comment: {comment.body}</p>
+              <p>Created by: {comment.created_by.username}</p>
+              <p>Votes: {comment.votes}</p>
+              <Votes comment_id={comment._id} updateVote={this.updateVote} />
+              {comment.created_by.username === 'tickle122' && <button className='button' onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
+            </div>
+          })}
+        </div>
       </section>
     )
   }
@@ -63,7 +63,7 @@ class Comments extends React.Component {
     axios
       .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
       .then((res) => {
-        this.setState({ comments: [...comments, res.data] })
+        this.setState({ comments: [...comments, res.data], input: '' })
       })
   }
 
