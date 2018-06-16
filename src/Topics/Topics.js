@@ -11,7 +11,7 @@ class Topics extends React.Component {
   render() {
     return (
 
-      <div>
+      <div className='articles'>
         {/* {this.state.articles.map(article => <p>{article.title}</p>)} */}
         {this.state.articles.map(article => <Link to={`/article/${article._id}`}><p>{article.title}</p></Link>)}
       </div>

@@ -9,10 +9,9 @@ class Article extends React.Component {
     }
   }
   render() {
-
     return (
 
-      <section>
+      <section className='article'>
         <h1>{this.state.article.title}</h1>
         <h4>{this.state.article.body}</h4>
         <p>Votes: {this.state.article.votes}</p>

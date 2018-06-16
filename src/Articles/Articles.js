@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 class Articles extends React.Component {
   render() {
     return (
-      <div>
-        {this.props.articles.map((article, i) => <Link key={i} to={`/article/${article._id}`}><p >{article.title}</p> <p>Created by:{article.created_by.username}</p></Link>)}
+      <div className='articles'>
+        {this.props.articles.map((article, i) => <Link key={i} to={`/article/${article._id}`}><div className='article-list'><p className='article-title'>{article.title}</p> <p className='article-by'>by {article.created_by.username}</p></div></Link>)}
       </div>
     )
   }

@@ -1,46 +1,148 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  text-align: left;
-  color: black;
-  font-family: 'Comfortaa', cursive;
-  background: linear-gradient(21deg, #10abff, #1beabd);
- 
 
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  
+}
+a {
+    text-decoration: none;
 }
 
 .header {
-  background-image: url('./header.jpg');
+  background-image: url('./resources/header.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 15em;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  
 }
+
+
+#title{
+  color: white;
+  text-align: center;
+  letter-spacing: 0.75em;
+  margin-top: 1em;
+}
+
+.topics {
+  float: right;
+ 
+}
+
 
 .button {
-  display:inline-block;
-  padding:0.7em 1.7em;
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.2em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:400;
-  color:#FFFFFF;
-  background-color:#3369ff;
-  box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
-  text-align:center;
-  position:relative;
+    -moz-box-shadow:inset 0px 1px 10px -15px #fce2c1;
+    -webkit-box-shadow:inset 0px 1px 10px -15px #fce2c1;
+    box-shadow:inset 0px 1px 10px -15px #fce2c1;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #594732));
+    background:-moz-linear-gradient(top, #ffc477 5%, #594732 100%);
+    background:-webkit-linear-gradient(top, #ffc477 5%, #594732 100%);
+    background:-o-linear-gradient(top, #ffc477 5%, #594732 100%);
+    background:-ms-linear-gradient(top, #ffc477 5%, #594732 100%);
+    background:linear-gradient(to bottom, #ffc477 5%, #594732 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#594732',GradientType=0);
+    background-color:#ffc477;
+    -moz-border-radius:16px;
+    -webkit-border-radius:16px;
+    border-radius:16px;
+    border:1px solid #eeb44f;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:10px 15px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #cc9f52;
+}
+.button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #594732), color-stop(1, #ffc477));
+    background:-moz-linear-gradient(top, #594732 5%, #ffc477 100%);
+    background:-webkit-linear-gradient(top, #594732 5%, #ffc477 100%);
+    background:-o-linear-gradient(top, #594732 5%, #ffc477 100%);
+    background:-ms-linear-gradient(top, #594732 5%, #ffc477 100%);
+    background:linear-gradient(to bottom, #594732 5%, #ffc477 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#594732', endColorstr='#ffc477',GradientType=0);
+    background-color:#594732;
+}
+.button:active {
+    position:relative;
+    top:1px;
 }
 
-.input {
-	
-	position:relative;
-	font-size: 1.5em;
-	background: linear-gradient(21deg, #10abff, #1beabd);
-	padding: 3px;
-	display: inline-block;
-	border-radius: 99999em;
-	
+#home {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+#button-topics {
+  margin-right: 1em;
+  margin-top: 1em;
+}
+#title {
+font-family: 'Gentium Book Basic', serif;
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+}
+.articles, .article {
+  position: absolute;
+  margin-top: 10em;
+  font-family: sans-serif;
+  justify-content: center;
+  color: bisque;
+  font-size: 1.5em;
+  background-color: black;
+  background-size: cover;
+  width: 100%;
+  
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 11em;
+
+  align-items: center;
+  justify-content: center;
+
+}
+
+.article-list {
+  border: .2em solid rgb(187, 116, 30);
+  width: 12em;
+  background-color: white;
+  height: 9em;
+  margin-top: 1em;
+  margin-left: 3em;
+  padding: 1em;
+  border-radius: 1em;
+  
+ 
+}
+
+.article-title {
+font-size: 1.4em;
+
+}
+
+.article-by {
+
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  
+}
+.comment {
+  border: bisque;
+  border-style: dotted;
+  width: 80%;
+  
 }

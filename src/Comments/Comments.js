@@ -10,16 +10,16 @@ class Comments extends React.Component {
   }
   render() {
     return (
-      <section>
+      <section >
         <div>
           <form>
             <p><input className='input' onChange={this.handleInput} value={this.state.input} required /></p>
             <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
           </form>
         </div>
-        <div>
+        <div className='comments'>
           {this.state.comments.sort((a, b) => { a.created_at < b.created_at }).map(comment => {
-            return <div>
+            return <div className='comment'>
               <p>Comment: {comment.body}</p>
               <p>Created by: {comment.created_by.username}</p>
               <p>Votes: {comment.votes}</p>
