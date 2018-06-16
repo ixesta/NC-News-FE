@@ -11,13 +11,20 @@ class Article extends React.Component {
   render() {
     return (
 
-      <section className='article'>
-        <h1>{this.state.article.title}</h1>
-        <h4>{this.state.article.body}</h4>
-        <p>Votes: {this.state.article.votes}</p>
-        <Votes article_id={this.state.article._id} updateVote={this.updateVote} handleVoteClick={this.handleVoteClick} />
-        <h3>Comments: </h3>
-        <Comments article_id={this.state.article._id} />
+      <section className='article-page'>
+        <div>
+          <h1 id='article-page-title'>{this.state.article.title}</h1>
+          <h4 id='article-page-body'>{this.state.article.body}</h4>
+        </div>
+
+        <div className='article-page-vote-button'>
+          <Votes article_id={this.state.article._id} updateVote={this.updateVote} handleVoteClick={this.handleVoteClick} />
+        </div>
+        <p className='article-page-votes'>Votes: {this.state.article.votes}</p>
+        <div className='article-page-comment-box'>
+          <h3>Add your comment: </h3>
+          <Comments article_id={this.state.article._id} />
+        </div>
       </section>
 
     )

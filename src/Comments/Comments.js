@@ -13,7 +13,7 @@ class Comments extends React.Component {
       <section >
         <div>
           <form>
-            <p><input className='input' onChange={this.handleInput} value={this.state.input} required /></p>
+            <p><textarea className='input' onChange={this.handleInput} value={this.state.input} required /></p>
             <button className='button' type='Submit' onClick={this.postComment}>Submit your comment</button>
           </form>
         </div>
