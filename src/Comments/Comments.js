@@ -26,21 +26,27 @@ class Comments extends React.Component {
               <Votes comment_id={comment._id} updateVote={this.updateVote} />
               {comment.created_by.username === 'tickle122' && <button className='button' id='delete-button' onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
             </div>
-          }).sort((a, b) => { a.created_at - b.created_at })}
+          })}
         </div>
       </section>
     )
   }
 
   componentDidMount = async () => {
-    await this.fetchData()
+    await this.fetchData();
   }
 
 
   componentDidUpdate = async (prevProps) => {
-    if (prevProps.article_id !== this.props.article_id) {
-      const { comments } = await this.fetchData()
-      this.setState({ comments })
+    try {
+      if (prevProps.article_id !== this.props.article_id) {
+        const { comments } = await this.fetchData();
+        comments.sort((a, b) => b.created_at - a.created_at);
+        this.setState({ comments })
+      }
+    } catch (err) {
+      if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
+      this.props.history.push('/500');
     }
   }
 
@@ -78,7 +84,6 @@ class Comments extends React.Component {
       .delete(`http://ro-nc-news.herokuapp.com/api/comments/${comment_id}`)
     const newComments = this.state.comments.filter(comment => comment._id !== comment_id)
     this.setState({ comments: newComments })
-
   }
 }
 

@@ -4,7 +4,6 @@ html, body {
   background-color: black;
 }
 
-
 a {
     text-decoration: none;
     color: inherit;
@@ -39,7 +38,6 @@ a {
   float: right;
 }
 
-
 .button {
    -webkit-border-radius: .4em;
    -moz-border-radius: .4em;
@@ -61,10 +59,10 @@ a {
    text-decoration: none;
 }
 
-
 #button-up {
   margin-right: .2em;
 }
+
  #delete-button {
    margin-top: 1em;
  }
@@ -73,6 +71,7 @@ a {
   margin-left: 1em;
   margin-top: 1em;
 }
+
 #button-topics {
   margin-right: 1em;
   margin-top: 1em;
@@ -81,7 +80,6 @@ a {
 #submit-button {
   margin-bottom: 1em;
 }
-
 
 .articles {
   position: absolute;
@@ -94,10 +92,9 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 11em;
+  margin: 11em auto;
   align-items: center;
   justify-content: center;
-
 }
 
 .article-list {
@@ -109,7 +106,6 @@ a {
   margin-left: 3em;
   padding: 1em;
   border-radius: 1em;
-
 }
 
 .article-title {
@@ -161,8 +157,8 @@ color: rgb(187, 116, 30);
   width: 20em;
   background-color: rgb(192, 167, 136);
   font-size: 1em;
-
 }
+
 .article-page {
   position: absolute;
   margin-top: 11em;
@@ -170,12 +166,14 @@ color: rgb(187, 116, 30);
   color: bisque;
   font-size: 1.5em;
 }
+
 .comments {
   display: column;
   width: auto;
   height: auto;
   color: bisque;
 }
+
 .comment {
   border: .2em solid rgb(187, 116, 30);
   width: 90%;
@@ -187,8 +185,8 @@ color: rgb(187, 116, 30);
   border-radius: 1em;
   text-align: justify;
   font-size: 0.8em;
-  
 }
+
 .comment-author {
   margin-bottom: 1em;
   color: rgb(187, 116, 30);
@@ -200,12 +198,11 @@ color: rgb(187, 116, 30);
   color: rgb(187, 116, 30)
 }
 
-.error404 {
+.error {
   color: bisque;
   margin-top: 5em;
   position: absolute;
   font-size: 4em;
- 
   border: .1em solid rgb(187, 116, 30);
   width: 90%;
   background-color:black;
@@ -220,7 +217,6 @@ margin: 0 auto;
 text-align: center;
 justify-content: center;
 padding: 1em 1em;
-
 }
 
 @media only screen and (max-device-width: 470px) {
@@ -259,7 +255,6 @@ padding: 1em 1em;
 #home {
   float: center;
 }
-
 }
 
 @media only screen and (max-device-width: 800px) and (min-device-width: 471px) {
@@ -279,8 +274,6 @@ padding: 1em 1em;
   text-align: center;
   letter-spacing: 0.75em;
   margin-top: 1.8em;
-
-
 }
 
 .button {
@@ -299,5 +292,4 @@ padding: 1em 1em;
 #home {
   float: center;
 }
-
 }

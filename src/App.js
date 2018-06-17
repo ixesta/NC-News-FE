@@ -6,6 +6,7 @@ import Home from './Home'
 import Article from './Article/Article';
 import Topics from './Topics/Topics';
 import Error404 from './Error404/Error404';
+import Error500 from './Error500/Error500';
 
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
           {/* <Route path="/comments" component={Comments} /> */}
           <Route path="/topics/:topic" component={Topics} />
           <Route path="/404" component={Error404} />
+          <Route path="/500" component={Error500} />
 
         </div>
       </Router >

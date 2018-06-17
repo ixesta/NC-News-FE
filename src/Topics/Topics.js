@@ -30,7 +30,7 @@ class Topics extends React.Component {
     } catch (err) {
       console.log(err)
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
-      this.props.history.push('/404');
+      this.props.history.push('/500');
     }
   }
 

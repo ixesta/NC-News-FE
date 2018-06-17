@@ -37,7 +37,7 @@ class Article extends React.Component {
       this.setState({ article })
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
-      this.props.history.push('/404');
+      this.props.history.push('/500');
     }
   }
 
