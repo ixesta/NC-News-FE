@@ -21,7 +21,7 @@ class Comments extends React.Component {
         <div className='comments'>
           {this.state.comments.map(comment => {
             return <div className='comment'>
-              <p className='comment-author'>Created by: {comment.created_by.username} {moment().fromNow(comment.created_at)} ago</p>
+              <p className='comment-author'>Created by: {comment.created_by.username} on the {moment(comment.created_at).format("DD MMM YYYY")} at {moment(comment.created_at).format("hh:mm a")}</p>
               <p>{comment.body}</p>
               <p className='comment-votes'>Votes: {comment.votes}</p>
               <Votes comment_id={comment._id} updateVote={this.updateVote} />
