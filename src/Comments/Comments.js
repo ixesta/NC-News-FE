@@ -18,7 +18,7 @@ class Comments extends React.Component {
           </form>
         </div>
         <div className='comments'>
-          {this.state.comments.sort((a, b) => { a.created_at < b.created_at }).map(comment => {
+          {this.state.comments.map(comment => {
             return <div className='comment'>
               <p className='comment-author'>Created by: {comment.created_by.username}</p>
               <p>{comment.body}</p>
@@ -26,7 +26,7 @@ class Comments extends React.Component {
               <Votes comment_id={comment._id} updateVote={this.updateVote} />
               {comment.created_by.username === 'tickle122' && <button className='button' id='delete-button' onClick={this.handleDeleteClick.bind(null, comment._id)}>Delete</button>}
             </div>
-          })}
+          }).sort((a, b) => { a.created_at - b.created_at })}
         </div>
       </section>
     )

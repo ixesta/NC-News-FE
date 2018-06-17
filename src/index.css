@@ -2,7 +2,6 @@
 html, body {
   font-family: 'Special Elite', cursive !important;
   background-color: black;
-  
 }
 
 
@@ -38,7 +37,6 @@ a {
 
 .topics {
   float: right;
- 
 }
 
 
@@ -222,5 +220,39 @@ margin: 0 auto;
 text-align: center;
 justify-content: center;
 padding: 1em 1em;
+
+}
+
+@media only screen and (max-width: 700px) {
+  .header {
+  height: 15em;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  border-bottom: 0.15em solid  rgb(187, 116, 30);
+  margin: auto;
+}
+
+#title {
+  font-size: 2.2em;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.75em;
+  margin-top: 1em;
+
+}
+
+.button {
+   -webkit-border-radius: .4em;
+   -moz-border-radius: .4em;
+   border-radius: .4em;
+   font-size: 1em;
+   font-weight: 100;
+   padding: .2em;
+   background-color: #BB741E;
+   text-shadow: .1em .1em 1em #000000;
+   text-decoration: none;
+   cursor: pointer;
+}
 
 }

@@ -14,9 +14,11 @@ class App extends Component {
       <Router>
         <div>
           <div className='header'>
+
             <Link to='/'>
               <button className='button' id='home'>Home</button>
             </Link>
+
             <div className='topics'>
               <Link to="/topics/coding">
                 <button className='button' id='button-topics'>Coding</button>
@@ -29,9 +31,10 @@ class App extends Component {
               <Link to="/topics/football">
                 <button className='button' id='button-topics'>Football</button>
               </Link>
-
             </div>
+
             <h1 id='title'>NORTHCODERS NEWS</h1>
+
           </div>
           <Route exact path="/" component={Home} />
           <Route path="/article/:article_id" component={Article} />
