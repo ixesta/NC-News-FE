@@ -223,7 +223,8 @@ padding: 1em 1em;
 
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-device-width: 470px) {
+
   .header {
   height: 15em;
   width: 100%;
@@ -234,11 +235,11 @@ padding: 1em 1em;
 }
 
 #title {
-  font-size: 2.2em;
+  font-size: 1.6em;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.75em;
-  margin-top: 1em;
+  margin-top: 3em;
 
 }
 
@@ -246,13 +247,57 @@ padding: 1em 1em;
    -webkit-border-radius: .4em;
    -moz-border-radius: .4em;
    border-radius: .4em;
-   font-size: 1em;
+   font-size: .5em;
    font-weight: 100;
-   padding: .2em;
+   padding: .02em;
    background-color: #BB741E;
    text-shadow: .1em .1em 1em #000000;
    text-decoration: none;
    cursor: pointer;
+}
+
+#home {
+  float: center;
+}
+
+}
+
+@media only screen and (max-device-width: 800px) and (min-device-width: 471px) {
+
+  .header {
+  height: 15em;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  border-bottom: 0.15em solid  rgb(187, 116, 30);
+  margin: auto;
+}
+
+#title {
+  font-size: 2.4em;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.75em;
+  margin-top: 1.8em;
+
+
+}
+
+.button {
+   -webkit-border-radius: .4em;
+   -moz-border-radius: .4em;
+   border-radius: .4em;
+   font-size: .5em;
+   font-weight: 100;
+   padding: .02em;
+   background-color: #BB741E;
+   text-shadow: .1em .1em 1em #000000;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+#home {
+  float: center;
 }
 
 }
