@@ -8,7 +8,6 @@ import Topics from './Topics/Topics';
 import Error404 from './Error404/Error404';
 import Error500 from './Error500/Error500';
 
-
 class App extends Component {
   render() {
     return (

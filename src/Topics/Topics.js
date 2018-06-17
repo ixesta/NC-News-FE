@@ -7,7 +7,6 @@ class Topics extends React.Component {
     articles: []
   }
 
-
   render() {
     return (
 
@@ -17,10 +16,6 @@ class Topics extends React.Component {
       </div>
     )
   }
-  // componentDidMount = async () => {
-  //   const { articles } = await this.fetchData()
-  //   this.setState({ articles })
-  // }
 
   componentDidMount = async () => {
     try {
@@ -46,6 +41,5 @@ class Topics extends React.Component {
     return data;
   }
 }
-
 
 export default Topics;

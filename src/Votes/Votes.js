@@ -3,7 +3,6 @@ import axios from 'axios'
 
 class Votes extends React.Component {
 
-
   render() {
     return (
       <div>

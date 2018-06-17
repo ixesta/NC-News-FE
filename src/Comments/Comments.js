@@ -9,19 +9,23 @@ class Comments extends React.Component {
     comments: [],
     input: ''
   }
+
   render() {
     return (
+
       <section >
+
         <div>
           <form>
             <p><textarea className='input' onChange={this.handleInput} value={this.state.input} required /></p>
             <button className='button' id='submit-button' type='Submit' onClick={this.postComment}>Submit your comment</button>
           </form>
         </div>
+
         <div className='comments'>
           {this.state.comments.map(comment => {
             return <div className='comment'>
-              <p className='comment-author'>Created by: {comment.created_by.username} on the {moment(comment.created_at).format("DD MMM YYYY")} at {moment(comment.created_at).format("hh:mm a")}</p>
+              <p className='comment-author'>Created by {comment.created_by.username} on the {moment(comment.created_at).format("DD MMM YYYY")}</p>
               <p>{comment.body}</p>
               <p className='comment-votes'>Votes: {comment.votes}</p>
               <Votes comment_id={comment._id} updateVote={this.updateVote} />
@@ -29,6 +33,7 @@ class Comments extends React.Component {
             </div>
           })}
         </div>
+
       </section>
     )
   }

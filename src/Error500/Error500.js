@@ -8,5 +8,4 @@ function Error500() {
   </div>
 }
 
-
 export default Error500;
