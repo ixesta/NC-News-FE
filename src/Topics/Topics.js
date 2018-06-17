@@ -11,7 +11,6 @@ class Topics extends React.Component {
     return (
 
       <div className='articles'>
-        {/* {this.state.articles.map(article => <p>{article.title}</p>)} */}
         {this.state.articles.map((article, i) => <Link key={i} to={`/article/${article._id}`}><div className='article-list'><p className='article-title'>{article.title}</p> <p className='article-by'>by {article.created_by.username}</p></div></Link>)}
       </div>
     )
@@ -20,12 +19,13 @@ class Topics extends React.Component {
   componentDidMount = async () => {
     try {
       const { articles } = await this.fetchData()
-      console.log(articles)
       this.setState({ articles })
     } catch (err) {
-      console.log(err)
-      if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
-      this.props.history.push('/500');
+      if (err.response.status === 404 || err.response.status === 400) {
+        this.props.history.push('/404');
+      } else {
+        this.props.history.push('/500');
+      }
     }
   }
 

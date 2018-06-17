@@ -37,8 +37,10 @@ class Article extends React.Component {
       const { article } = await this.fetchData()
       this.setState({ article })
     } catch (err) {
-      if (err.response.status === 404 || err.response.status === 400) this.props.history.push('/404');
-      this.props.history.push('/500');
+      if (err.response.status === 404 || err.response.status === 400) {
+        this.props.history.push('/404');
+      } else { this.props.history.push('/500'); }
+
     }
   }
 
