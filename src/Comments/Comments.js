@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Votes from '../Votes/Votes'
+import Votes from '../Votes/Votes';
+import moment from 'moment';
 
 
 class Comments extends React.Component {
@@ -20,7 +21,7 @@ class Comments extends React.Component {
         <div className='comments'>
           {this.state.comments.map(comment => {
             return <div className='comment'>
-              <p className='comment-author'>Created by: {comment.created_by.username}</p>
+              <p className='comment-author'>Created by: {comment.created_by.username} {moment().fromNow(comment.created_at)} ago</p>
               <p>{comment.body}</p>
               <p className='comment-votes'>Votes: {comment.votes}</p>
               <Votes comment_id={comment._id} updateVote={this.updateVote} />

@@ -39,7 +39,6 @@ class App extends Component {
           </div>
           <Route exact path="/" component={Home} />
           <Route path="/article/:article_id" component={Article} />
-          {/* <Route path="/comments" component={Comments} /> */}
           <Route path="/topics/:topic" component={Topics} />
           <Route path="/404" component={Error404} />
           <Route path="/500" component={Error500} />
