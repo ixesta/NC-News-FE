@@ -8,7 +8,7 @@ Northcoders News has articles which are divided into topics. Each article has us
 
 Follow these steps to run this project on your local machine for development and testing purposes.
 
- - Prerequisites
+ Prerequisites
 
 You'll need [node] (https://nodejs.org) installed in your machine. By running this command line on your terminal you'll know if you have node already installed and what version.
 
@@ -16,7 +16,7 @@ You'll need [node] (https://nodejs.org) installed in your machine. By running th
 
 If you don't have it, I recommend to follow this tutorial: https://changelog.com/posts/install-node-js-with-homebrew-on-os-x
 
- - Installing
+Installing
 
 Once you have node and have cloned the project, you can run this project. Don't forget to install all the dependencies!
 
