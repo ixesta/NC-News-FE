@@ -89,10 +89,19 @@ class Comments extends React.Component {
   }
 
   handleDeleteClick = async (comment_id) => {
-    await axios
-      .delete(`http://ro-nc-news.herokuapp.com/api/comments/${comment_id}`)
-    const newComments = this.state.comments.filter(comment => comment._id !== comment_id)
-    this.setState({ comments: newComments })
+    try {
+      await axios
+        .delete(`http://ro-nc-news.herokuapp.com/api/comments/${comment_id}`)
+      const newComments = this.state.comments.filter(comment => comment._id !== comment_id)
+      this.setState({ comments: newComments });
+
+    } catch (err) {
+      if (err.response.status === 404 || err.response.status === 400) {
+        this.props.history.push('/404');
+      } else {
+        this.props.history.push('/500');
+      }
+    }
   }
 }
 
