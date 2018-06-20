@@ -60,16 +60,11 @@ class Comments extends React.Component {
   }
 
   fetchData = async () => {
-    try {
-      const { data } = await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`)
-      return data;
-    } catch (err) {
-      if (err.response.status === 404 || err.response.status === 400) {
-        this.props.history.push('/404');
-      } else {
-        this.props.history.push('/500');
-      }
-    }
+
+    const { data } = await axios.get(`https://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`)
+    return data;
+
+
   }
 
   updateVote = (direction, id) => {
