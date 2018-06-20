@@ -74,12 +74,20 @@ class Comments extends React.Component {
 
   postComment = (event) => {
     const { comments } = this.state;
-    event.preventDefault();
-    axios
-      .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
-      .then((res) => {
-        this.setState({ comments: [...comments, res.data], input: '' })
-      })
+    try {
+      event.preventDefault();
+      axios
+        .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
+        .then((res) => {
+          this.setState({ comments: [...comments, res.data], input: '' })
+        })
+    } catch (err) {
+      if (err.response.status === 404 || err.response.status === 400) {
+        this.props.history.push('/404');
+      } else {
+        this.props.history.push('/500');
+      }
+    }
   }
 
   handleInput = (event) => {
