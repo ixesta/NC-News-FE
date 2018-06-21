@@ -24,7 +24,7 @@ class Comments extends React.Component {
 
         <div className='comments'>
           {this.state.comments.map(comment => {
-            return <div className='comment'>
+            return <div key={comment._id} className='comment'>
               <p className='comment-author'>Created by {comment.created_by.username} on the {moment(comment.created_at).format("DD MMM YYYY")}</p>
               <p>{comment.body}</p>
               <p className='comment-votes'>Votes: {comment.votes}</p>
@@ -82,6 +82,7 @@ class Comments extends React.Component {
       axios
         .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
         .then((res) => {
+
           this.setState({ comments: [...comments, res.data], input: '' })
         })
     } catch (err) {
@@ -94,7 +95,6 @@ class Comments extends React.Component {
   }
 
   handleInput = (event) => {
-    event.preventDefault();
     const input = event.target.value;
     this.setState({ input })
   }
