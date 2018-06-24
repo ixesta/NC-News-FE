@@ -19,7 +19,7 @@ a {
   font-size: 1.5em;
 }
 
-#title {
+.header #title {
   color: rgb(228, 135, 21);
   font-size: 3.5em;
   font-weight: 700;
@@ -38,7 +38,7 @@ a {
    border-radius: .4em;
    color: #FFE4C4;
    font-family: 'Special Elite', cursive;
-   font-size: 1em;
+   font-size: 1.3em;
    font-weight: 100;
    padding: .5em;
    background-color: #BB741E;
@@ -213,6 +213,9 @@ justify-content: center;
 padding: 1em 1em;
 }
 
+
+
+
 @media only screen and (max-device-width: 470px) {
 
   .header {
@@ -224,7 +227,7 @@ padding: 1em 1em;
   margin: auto;
 }
 
-#title {
+.header #title {
   font-size: 1.6em;
   font-weight: 700;
   text-align: center;
@@ -233,37 +236,71 @@ padding: 1em 1em;
 
 }
 
-.button {
+.header .button {
    -webkit-border-radius: .4em;
    -moz-border-radius: .4em;
    border-radius: .4em;
-   font-size: .5em;
-   font-weight: 100;
-   padding: .02em;
+   padding: .3em;
    background-color: #BB741E;
    text-shadow: .1em .1em 1em #000000;
    text-decoration: none;
    cursor: pointer;
 }
 
+
+
 #home {
   float: center;
 }
 
 .articles {
-  position: absolute;
-  justify-content: center;
-  color: bisque;
-  font-size: 1.5em;
-  background-color: black;
-  background-size: cover;
   width: 82%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin: 11em auto;
-  align-items: center;
-  justify-content: center;
+}
+
+#article-page-title {
+width: 70%;
+font-size: 1em;
+margin-bottom: .3em;
+margin-left: .2em;
+color: rgb(187, 116, 30);
+}
+
+#article-page-body {
+  width: 85%;
+  margin-left: .6em;
+  margin-bottom: 2em;
+  text-align: justify;
+}
+
+.article-page-vote-button {
+ margin-left: 1em; 
+ margin-bottom: 2em;
+ font-size: 0.7em;
+}
+
+.article-page-comment-box {
+  margin-left: 1em; 
+  margin-bottom: 1em;
+  color:rgb(187, 116, 30);
+}
+.input {
+  height: 7em;
+  width: 14em;
+  background-color: rgb(192, 167, 136);
+  font-size: 1em;
+}
+.comment {
+  border: .2em solid rgb(187, 116, 30);
+  width: 80%;
+  background-color:black;
+  height: auto;
+  margin-top: 1em;
+  margin-left: .5em;
+  padding: 1em;
+  border-radius: 1em;
+  text-align: justify;
+  font-size: 0.8em;
 }
 
 }
@@ -296,13 +333,59 @@ html, body {
    -webkit-border-radius: .4em;
    -moz-border-radius: .4em;
    border-radius: .4em;
-   font-size: .5em;
-   font-weight: 100;
    padding: .02em;
    background-color: #BB741E;
    text-shadow: .1em .1em 1em #000000;
    text-decoration: none;
    cursor: pointer;
+}
+.articles {
+  width: 85%;
+  margin: 11em auto;
+}
+
+#article-page-title {
+width: 80%;
+font-size: 1em;
+margin-bottom: .3em;
+margin-left: .2em;
+color: rgb(187, 116, 30);
+}
+
+#article-page-body {
+  width: auto;
+  margin-left: .6em;
+  margin-bottom: 2em;
+  text-align: justify;
+}
+
+.article-page-vote-button {
+ margin-left: 2em; 
+ margin-bottom: 2em;
+ font-size: 0.7em;
+}
+
+.article-page-comment-box {
+  margin-left: 2em; 
+  margin-bottom: 1em;
+  color:rgb(187, 116, 30);
+}
+
+.input {
+  height: 7em;
+  width: 20em;
+  background-color: rgb(192, 167, 136);
+  font-size: 1em;
+}
+.comment {
+  width: 80%;
+  height: auto;
+  margin-top: 1em;
+  margin-left: .5em;
+  padding: 1em;
+  border-radius: 1em;
+  text-align: justify;
+  font-size: 0.8em;
 }
 
 }
