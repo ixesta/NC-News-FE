@@ -48,6 +48,22 @@ a {
    cursor: pointer;
 }
 
+.header .button {
+   -webkit-border-radius: .4em;
+   -moz-border-radius: .4em;
+   border-radius: .4em;
+   color: #FFE4C4;
+   font-family: 'Special Elite', cursive;
+   font-size: 1.3em;
+   font-weight: 100;
+   padding: .5em;
+   background-color: #BB741E;
+   text-shadow: .1em .1em 1em #000000;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+}
+
 .button:hover {
    background: #594732;
    text-decoration: none;
@@ -57,8 +73,8 @@ a {
   margin-right: .2em;
 }
 
- #delete-button {
-   margin-top: 1em;
+#delete-button {
+  margin-top: 1em;
  }
 
 #home {
@@ -219,7 +235,7 @@ padding: 1em 1em;
 @media only screen and (max-device-width: 470px) {
 
   .header {
-  height: 15em;
+  height: 12em;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -241,6 +257,7 @@ padding: 1em 1em;
    -moz-border-radius: .4em;
    border-radius: .4em;
    padding: .3em;
+   font-size: 1em;
 }
 
 
@@ -251,7 +268,7 @@ padding: 1em 1em;
 
 .articles {
   width: 82%;
-  margin: 11em auto;
+  margin: 8em auto;
 }
 
 #article-page-title {
@@ -272,7 +289,11 @@ color: rgb(187, 116, 30);
 .article-page-vote-button {
  margin-left: 1em; 
  margin-bottom: 2em;
- font-size: 0.7em;
+
+}
+
+.article-page {
+  margin-top: 9em;
 }
 
 .article-page-comment-box {
@@ -297,6 +318,10 @@ color: rgb(187, 116, 30);
   border-radius: 1em;
   text-align: justify;
   font-size: 0.8em;
+}
+
+.button {
+  font-size: .8em;
 }
 
 
