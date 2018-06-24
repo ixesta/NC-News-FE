@@ -82,7 +82,6 @@ class Comments extends React.Component {
       axios
         .post(`http://ro-nc-news.herokuapp.com/api/articles/${this.props.article_id}/comments/`, { body: this.state.input })
         .then((res) => {
-
           this.setState({ comments: [...comments, res.data], input: '' })
         })
     } catch (err) {

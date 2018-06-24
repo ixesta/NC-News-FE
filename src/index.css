@@ -1,9 +1,3 @@
-
-html, body {
-  font-family: 'Special Elite', cursive !important;
-  background-color: black;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -255,6 +249,28 @@ padding: 1em 1em;
 #home {
   float: center;
 }
+
+.articles {
+  position: absolute;
+  justify-content: center;
+  color: bisque;
+  font-size: 1.5em;
+  background-color: black;
+  background-size: cover;
+  width: 82%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 11em auto;
+  align-items: center;
+  justify-content: center;
+}
+
+}
+
+html, body {
+  font-family: 'Special Elite', cursive !important;
+  background-color: black;
 }
 
 @media only screen and (max-device-width: 800px) and (min-device-width: 471px) {
@@ -289,7 +305,4 @@ padding: 1em 1em;
    cursor: pointer;
 }
 
-#home {
-  float: center;
-}
 }
