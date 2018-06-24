@@ -241,10 +241,6 @@ padding: 1em 1em;
    -moz-border-radius: .4em;
    border-radius: .4em;
    padding: .3em;
-   background-color: #BB741E;
-   text-shadow: .1em .1em 1em #000000;
-   text-decoration: none;
-   cursor: pointer;
 }
 
 
@@ -302,6 +298,7 @@ color: rgb(187, 116, 30);
   text-align: justify;
   font-size: 0.8em;
 }
+
 
 }
 
