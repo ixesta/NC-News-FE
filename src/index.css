@@ -248,7 +248,7 @@ padding: 1em 1em;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.75em;
-  margin-top: 3em;
+  margin-top: 2em;
 
 }
 
@@ -259,8 +259,6 @@ padding: 1em 1em;
    padding: .3em;
    font-size: 1em;
 }
-
-
 
 #home {
   float: center;
@@ -323,8 +321,6 @@ color: rgb(187, 116, 30);
 .button {
   font-size: .8em;
 }
-
-
 }
 
 html, body {
